@@ -1,0 +1,13 @@
+﻿version: '3.7'
+
+services:
+  database:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: ms-sql
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      # user: sa
+      - SA_PASSWORD=@Qwert123456789
+      - MSSQL_PID=Developer

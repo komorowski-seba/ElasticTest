@@ -1,0 +1,33 @@
+﻿GET http://localhost:9200
+
+### added index 
+PUT http://localhost:9200/tests?pretty
+
+
+###
+GET http://localhost:9200/tests/_search
+
+
+### add document
+#PUT http://localhost:9200/tests/_doc/1
+#Content-Type: application/json
+#
+#{
+#  "code": "PL",
+#  "name": "Polska"
+#}
+
+
+### search
+POST http://localhost:9200/tests/_doc/_search?pretty
+Content-Type: application/json
+
+{
+  "query": {
+    "match": {
+      "cityname": {
+        "query": "Kielce"
+      }
+    }
+  }
+}

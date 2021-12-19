@@ -1,0 +1,4 @@
+﻿GET https://api.gios.gov.pl/pjp-api/rest/station/findAll
+
+###
+GET https://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/52
