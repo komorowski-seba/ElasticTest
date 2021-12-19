@@ -6,7 +6,7 @@ With edpoint, you can search for measurements from individual cities/towns
 
 </br>
 
-## Architektura 
+## Architecture 
 
 ![alt text](doc\api.png "Api")
 
@@ -61,7 +61,7 @@ Elastic potrafi konsumować pamięć, praca przy 16MB może być trudna.
 
 </br>
 
-## DB Struktura
+## DB Structure
 
 ![alt text](doc\db.png "Api")
 
