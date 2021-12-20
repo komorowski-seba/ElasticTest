@@ -2,22 +2,19 @@ A test application that queries API of **GIOŚ Air Quality portal**.
 Collects all air monitoring stations from Poland, and saves them to a database.
 Then it cyclically queries all stations for air quality, and saves this data in DB.
 In **elasticsearch** the latest readings from the control stations are updated.
-With edpoint, you can search for measurements from individual cities/towns
+With endpoint, you can search for measurements from individual cities/towns
 
-</br>
+<br />
 
-## Architecture 
+## Architecture
 
-![alt text](doc\api.png "Api")
+![Img Api](doc/api.png "Api")
 
 The architecture is not complicated. 
-The hangfire api uses **MS SQL**, both to run the queue system itself. As well as, to save all available measurement stations and the measurement history itself.
+The hangfire api uses **MS SQL**, both to run the queue system itself. As well as, to save all available measurement stations and the measurement history.
 
-</br>
+**Elasticsearch** is used to search for *actual / recent* air measurements, from all stations.
 
-**Elasticsearch** was used to search for *actual / recent* air measurements, from all stations.
-
-</br>
 
 ## Docker
 
@@ -57,13 +54,11 @@ services:
 #    driver: local
 ```
 
-Elastic potrafi konsumować pamięć, praca przy 16MB może być trudna.
-
-</br>
+Elastic can consume memory, working with 16MB on local hardware can be difficult
 
 ## DB Structure
 
-![alt text](doc\db.png "Api")
+![Img Data Base Graph](doc/db.png "Api")
 
 Application domain divided into two contexts
 - Province
@@ -72,11 +67,11 @@ Application domain divided into two contexts
 In the context of **Province** I have arranged the stations,as they are located around the country. </br>
 The **AirTest** context stores the test history of each station.
 
-</br>
+<br />
 
 ## ElasticTest (Hangfire) 
 
-![alt text](doc\api2.png "Api")
+![alt text](doc/api2.png "Api")
 
 The application is tasked with three actions
 
@@ -84,15 +79,15 @@ The application is tasked with three actions
 
 The first task is to download all air control stations and put them into the database. This task is performed only once at system startup.
 
-![alt text](doc\job1.png "Api")
+![Img Hangfire jobs](doc/job1.png "Api")
 
 The **GIOS APIs** used are:
 
-```js
+```http request
 GET https://api.gios.gov.pl/pjp-api/rest/station/findAll
 ```
 
-```js
+```json
 [
     ...
 {
@@ -121,15 +116,15 @@ GET https://api.gios.gov.pl/pjp-api/rest/station/findAll
 The next step is to update the air states, here I query each station by its **Id**, and then store it in the 
 **database**, and the next step is to update the entry in **elastic**. This is done periodically, every hour.
 
-![alt text](doc\job2.png "Api")
+![Img Hangfire jobs](doc/job2.png "Api")
 
-APIs **GIOŚ**:
+APIs **GIOS**:
 
-```js
+```http request
 GET https://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/{id}
 ```
 
-```js
+```json
 {
   "id": 52,
   "stCalcDate": "2021-12-19 23:20:17",
@@ -172,7 +167,7 @@ public class AirTestElasticModel
 ```
 In the database, the record looks like this:
 
-![alt text](doc\db1.png "Api")
+![Img Data Base - list station tests](doc/db1.png "Api")
 
 > **3** 
 
@@ -180,6 +175,7 @@ The third is the provision of **Web Api** which will give the ability to downloa
 
 
 ```c#
+// GET https://localhost:5001/Elastic?query={city name}
 [HttpGet]
 public async Task<IEnumerable<AirTestElasticModel>> Get(string query)
 {
@@ -188,11 +184,7 @@ public async Task<IEnumerable<AirTestElasticModel>> Get(string query)
 }
 ```
 
-```js
-https://localhost:5001/Elastic?query=Kielce
-```
-
-```js
+```json
 [
   {
     "id": 11195,
