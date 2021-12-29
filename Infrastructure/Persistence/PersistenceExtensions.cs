@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Common.Interfaces;
+using Application.Interfaces;
 using Domain.Common;
 using Infrastructure.Persistence.Services;
 using Microsoft.AspNetCore.Builder;

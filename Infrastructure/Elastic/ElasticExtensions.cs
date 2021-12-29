@@ -1,6 +1,6 @@
 ﻿using System;
-using Common.Interfaces;
-using Common.Models.Elastic;
+using Application.Interfaces;
+using Application.Models.Elastic;
 using Infrastructure.Elastic.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

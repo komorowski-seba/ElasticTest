@@ -1,5 +1,5 @@
 ﻿using System;
-using Common.Interfaces;
+using Application.Interfaces;
 using Hangfire;
 
 namespace Infrastructure.Hangfire

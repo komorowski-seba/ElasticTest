@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Common.Exceptions
+namespace Application.Exceptions
 {
     public class ResponseException : Exception
     {

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using Common.Exceptions;
-using Common.Interfaces;
-using Common.Models.Dto;
-using Common.Models.Elastic;
-using Common.Models.GiosStationModels;
+using Application.Exceptions;
+using Application.Interfaces;
+using Application.Models.Dto;
+using Application.Models.Elastic;
+using Application.Models.GiosStationModels;
 using Dapper;
 using Domain.Common;
 using Domain.Entities.AirAnalysisContext;
@@ -14,7 +14,7 @@ using Domain.Entities.ProvinceContext;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using RestSharp;
-using Station = Common.Models.GiosStationModels.Station;
+using Station = Application.Models.GiosStationModels.Station;
 
 namespace ElasticTest.Services
 {

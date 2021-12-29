@@ -1,5 +1,5 @@
-﻿using Common.Interfaces;
-using Common.Models.Settings;
+﻿using Application.Interfaces;
+using Application.Models.Settings;
 using Microsoft.Extensions.Configuration;
 
 namespace ElasticTest.Services

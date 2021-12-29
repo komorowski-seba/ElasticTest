@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Common.Models.GiosStationModels
+namespace Application.Models.GiosStationModels
 {
     public class City
     {

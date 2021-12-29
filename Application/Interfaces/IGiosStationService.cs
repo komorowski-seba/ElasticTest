@@ -1,4 +1,4 @@
-﻿namespace Common.Interfaces
+﻿namespace Application.Interfaces
 {
     public interface IGiosStationService
     {

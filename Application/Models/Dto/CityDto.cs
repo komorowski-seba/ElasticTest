@@ -1,4 +1,4 @@
-﻿namespace Common.Models.Dto
+﻿namespace Application.Models.Dto
 {
     public class CityDto
     {

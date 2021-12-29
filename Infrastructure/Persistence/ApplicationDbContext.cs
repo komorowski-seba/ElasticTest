@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using Common.Interfaces;
+using Application.Interfaces;
 using Domain.Entities.AirAnalysisContext;
 using Domain.Entities.ProvinceContext;
 using Microsoft.EntityFrameworkCore;

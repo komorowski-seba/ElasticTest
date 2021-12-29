@@ -2,7 +2,7 @@
 using Domain.Entities.ProvinceContext;
 using Microsoft.EntityFrameworkCore;
 
-namespace Common.Interfaces
+namespace Application.Interfaces
 {
     public interface IApplicationDbContext
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Common.Models.Elastic
+namespace Application.Models.Elastic
 {
     public class AirTestElasticModel
     {

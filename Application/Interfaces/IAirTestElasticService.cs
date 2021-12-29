@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Common.Models.Elastic;
+using Application.Models.Elastic;
 
-namespace Common.Interfaces
+namespace Application.Interfaces
 {
     public interface IAirTestElasticService
     {

@@ -1,6 +1,6 @@
-﻿using Common.Models.Settings;
+﻿using Application.Models.Settings;
 
-namespace Common.Interfaces
+namespace Application.Interfaces
 {
     public interface IAppsettingsConfigServices
     {

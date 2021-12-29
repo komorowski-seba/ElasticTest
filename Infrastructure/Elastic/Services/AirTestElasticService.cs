@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Common.Interfaces;
-using Common.Models.Elastic;
+using Application.Interfaces;
+using Application.Models.Elastic;
 using Microsoft.Extensions.Logging;
 using Nest;
 

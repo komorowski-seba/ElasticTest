@@ -1,5 +1,5 @@
 using System;
-using Common.Interfaces;
+using Application.Interfaces;
 using ElasticTest.Services;
 using Hangfire;
 using Infrastructure.Elastic;

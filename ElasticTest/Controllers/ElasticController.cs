@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Common.Interfaces;
-using Common.Models.Elastic;
-using ElasticTest.Models;
+using Application.Interfaces;
+using Application.Models.Elastic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 

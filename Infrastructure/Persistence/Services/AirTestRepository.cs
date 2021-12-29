@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Common.Interfaces;
+using Application.Interfaces;
 using Domain.Common;
 using Domain.Entities.AirAnalysisContext;
 
