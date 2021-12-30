@@ -1,6 +1,6 @@
 ﻿namespace Application.Interfaces
 {
-    public interface IGiosStationService
+    public interface IGiosService
     {
         void CompleteAllProvinces();
         void GetNewTest();

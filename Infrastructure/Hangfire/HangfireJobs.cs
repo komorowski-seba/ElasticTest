@@ -10,7 +10,7 @@ namespace Infrastructure.Hangfire
         {
             // BackgroundJob.Enqueue<IGiosStationService>( stationService => stationService.GetNewTest() );
             // BackgroundJob.Enqueue<IGiosStationService>( stationService => stationService.CompleteAllProvinces() );
-            BackgroundJob.Schedule<IGiosStationService>(stationService => stationService.GetNewTest(), TimeSpan.FromHours(1));
+            BackgroundJob.Schedule<IGiosService>(stationService => stationService.GetNewTest(), TimeSpan.FromHours(1));
         }
     }
 }

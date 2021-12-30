@@ -16,22 +16,22 @@ using Newtonsoft.Json;
 using RestSharp;
 using Station = Application.Models.GiosStationModels.Station;
 
-namespace ElasticTest.Services
+namespace Infrastructure.Gios.Services
 {
-    public class GiosStationService : IGiosStationService
+    public class GiosService : IGiosService
     {
         private readonly IProvinceRepository _provinceRepository;
         private readonly IAirTestRepository _testRepository;
         private readonly IApplicationDbContext _applicationDb;
         private readonly IAppsettingsConfigServices _appsettings;
-        private readonly ILogger<GiosStationService> _logger;
+        private readonly ILogger<GiosService> _logger;
         private readonly IAirTestElasticService _airTestElasticService;
 
-        public GiosStationService(IProvinceRepository provinceRepository, 
+        public GiosService(IProvinceRepository provinceRepository, 
             IApplicationDbContext applicationDb, 
             IAirTestRepository testRepository, 
             IAppsettingsConfigServices appsettings, 
-            ILogger<GiosStationService> logger, 
+            ILogger<GiosService> logger, 
             IAirTestElasticService airTestElasticService)
         {
             _provinceRepository = provinceRepository;

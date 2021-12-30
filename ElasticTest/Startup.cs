@@ -3,6 +3,7 @@ using Application.Interfaces;
 using ElasticTest.Services;
 using Hangfire;
 using Infrastructure.Elastic;
+using Infrastructure.Gios;
 using Infrastructure.Hangfire;
 using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Builder;
@@ -30,12 +31,10 @@ namespace ElasticTest
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "ElasticTest", Version = "v1"});
             });
-            
-            services.AddScoped<IGiosStationService, GiosStationService>();
             services.AddScoped<IAppsettingsConfigServices>(p => new AppsettingsConfigServices(Configuration));
-
             services.AddHangfireServices(Configuration);
             services.AddElasticServices(Configuration);
+            services.AddGiosServices();
             services.AddPersistenceServices(Configuration);
         }
 
@@ -47,11 +46,9 @@ namespace ElasticTest
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ElasticTest v1"));
             }
-            
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
-
             app.UsePersistenceConfiguration();
             app.UseHangfireConfiguration(serviceProvider);
             app.UseEndpoints(endpoints =>
